@@ -1,0 +1,44 @@
+$border: 2px solid white;
+
+@mixin about($direction)
+{
+  .about#{$direction}
+  {
+    border: $border;
+    p
+    {
+      text-align: center;
+    }
+
+    @if($direction==Right)
+    {
+      img
+      {
+        float:$direction;
+      }
+    }
+    @elseif($direction==Left)
+    {
+      img
+      {
+        float:$direction;
+      }
+    }
+  }
+}
+.loginBox
+{
+  position:fixed;
+  float:right;
+  background-color: rgba(155, 155, 255,.5);
+  right:0;
+  border: $border;
+  text-align: right;
+  h5
+  {
+    text-align: center;
+  }
+}
+
+@include about(Right);
+@include about(Left);

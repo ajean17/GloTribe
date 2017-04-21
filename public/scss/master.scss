@@ -1,0 +1,20 @@
+@import "components/topNav";
+@import "pages/profile";
+@import "pages/welcome";
+@import "pages/registration";
+@import "pages/notifications";
+@import "pages/inbox";
+@import "pages/search";
+
+body
+{
+  margin:0;
+  h1
+  {
+    text-align: center;
+  }
+}
+
+//use the following commands in the command prompt to compile the scss
+//cd public
+//sass scss\master.scss css\master.css

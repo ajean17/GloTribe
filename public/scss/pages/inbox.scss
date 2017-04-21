@@ -1,0 +1,148 @@
+
+h4
+{
+  text-align: center;
+}
+.convoList
+{
+  box-shadow: 0px 5px 5px #888888;
+  background-color: rgba(0, 200, 200, .2);
+  border:#60A0FF 2.5px solid;
+  border-radius: 5px;
+
+  #startConvo
+  {
+    margin:auto;
+    width:100%;
+    border-style: inset;
+    border-radius: 5px;
+  }
+
+  #talks
+  {
+    width: 150px;
+    height:60px;
+    background-color: white;
+    margin-bottom:8px;
+    text-align: center;
+    border:#182840 1.5px solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #888888;
+    padding:2px 0px;
+    .talk_pic
+    {
+      float:left;
+      width:55px;
+      height:55px;
+      margin-right:8px;
+      border-radius: 5px;
+    }
+    .talkData
+    {
+      float:left;
+    }
+  }
+}
+
+.convoContent
+{
+  @extend .convoList;
+  box-shadow: 5px 5px 5px #888888;
+
+  #messageBox
+  {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    //position:relative;
+    //background-color: rgba(100, 0, 100,.3);
+
+    #conversationHead
+    {
+      margin:auto;
+      //border-bottom: 1px solid #CCC;
+      text-align: center;
+      //padding: 5px 0px 5px;
+      font-size: 20px;
+      font-weight: normal;
+      //background-color: rgba(100, 50, 100,.3);
+    }
+
+    #appearMessage
+    {
+      height:480px;
+      width: 100%;
+      background-color:#FFF;
+      overflow-y: auto;
+      //position: absolute;
+      margin: auto;
+      border-style: inset;
+      border-radius: 5px;
+
+      .msg
+      {
+        margin: 10px 10px;
+        background-color: #f1f0f0;
+        max-width: calc(45% - 20px);
+        color: #000;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+      .msgfrom
+      {
+        background-color: #0084ff;
+        color: #FFF;
+        margin: 10px 10px 10px 55%;
+        border-radius: 5px;
+      }
+      .msgarr
+      {
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #f1f0f0;
+        transform: rotate(315deg);
+        margin: -12px 0px 0px 45px;
+      }
+      .msgarrfrom
+      {
+        border-bottom: 8px solid #0084ff;
+        float: right;
+        margin-right: 45px;
+      }
+      .msgsentby
+       {
+        color: #8C8C8C;
+        font-size: 12px;
+        margin: 4px 0px 0px 10px;
+      }
+      .msgsentbyfrom
+      {
+        float: right;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  #inputBox
+  {
+    width: 100%;
+    height: 50px;
+    //position: absolute fixed;
+    margin:auto;
+    border-top: 1px solid #CCC;
+    //background-color: #EBABEB;
+
+    #messageInput
+    {
+      padding: 3px;
+      width: 100%;
+      font-size: 14px;
+      margin:auto;
+      outline: none;
+      border-radius: 5px;
+    }
+  }
+}

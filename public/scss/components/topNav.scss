@@ -1,0 +1,34 @@
+.navigation
+{
+  ul
+  {
+    background-color: black;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+  .right
+  {
+    float:right;
+  }
+
+  li
+  {
+    float:left;
+    //display: inline; //inline is what makes the list horizontal by removing the breaks before and after each list item
+    a
+    {
+      display: block;
+      padding: 14px 16px;
+      color: pink;
+      text-decoration: none;
+      &:hover:not(.user)
+      {
+        color:pink;
+        background-color: grey;
+      }
+    }
+  }
+}
