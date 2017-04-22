@@ -222,6 +222,7 @@ class ParseController extends Controller
     public function search(Request $request)
     {
       $message = "Something is wrong dude.";
+      $picture = "Default";
       if($request->has('lat') && $request->has('lng'))//FROM Search Page
       {
         $lat = $request['lat'];
@@ -326,6 +327,8 @@ class ParseController extends Controller
               ]);
 
               $message = "new_dialogue";
+              if($newTalkTo->avatar != "" && $newTalkTo != NULL)
+                $picture = $newTalkTo->avatar;
             }
         }
         else if($newTalkTo == "")
@@ -333,7 +336,7 @@ class ParseController extends Controller
             $message = "Sorry, That user does not exist yet.";
         }
       }
-      return response()->json(['message' => $message,'action' => 'gotNothing']);
+      return response()->json(['message' => $message,'action' => 'gotNothing','picture' => $picture]);
     }
     public function post(Request $request)
     {

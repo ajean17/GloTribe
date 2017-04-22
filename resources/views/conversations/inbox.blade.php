@@ -127,10 +127,15 @@
           data: {whoSearched: whoSearched, inboxSearch: inboxSearch, _token: token}
         }).done(function (msg)
         {
-          //console.log(msg['message']);
+          //console.log(msg['picture']);
           if(msg['message'] == "new_dialogue")
           {
-            $('#dialogues').append("<li><a href='#' onclick='return false;' onmouseup='talkingTo(\"" + inboxSearch + "\")''>" + inboxSearch +"</a></li><br/>");
+            var pic = "";
+            if(msg['picture'] == "Default")
+              pic = '<img src="/images/Default.jpg" alt="'+inboxSearch+'" class="talk_pic">';
+            else
+              pic = '<img src="/uploads/user/'+inboxSearch+'/images/'+msg['picture']+'" alt="'+inboxSearch+'" class="talk_pic">';
+            $('.convoList').append("<div id='talks'>"+pic+"<div class='talkData'><b><a href='#' onclick='return false;' onmouseup='talkingTo(\"" + inboxSearch + "\")''>" + inboxSearch +"</a></b></div></div><br/>");
           }
           else
             alert(msg['message']);

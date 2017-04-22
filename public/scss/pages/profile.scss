@@ -1,9 +1,14 @@
 .avatar
 {
+  //border-radius: 5px;
+  //box-shadow: 1px 1px 5px #888888;
   #options
   {
-    text-align: center;
-    float:left;
+    text-align: left;
+    button
+    {
+      width: 150px;
+    }
   }
   #profile_pic_box
   {
@@ -18,7 +23,6 @@
       width: 246px;
       height: 246px;
     }
-
     a
     {
       display: block;
@@ -32,7 +36,6 @@
     	text-decoration:none;
     	color:#60750B;
     }
-
     form
     {
       display:none;
@@ -50,11 +53,33 @@
   }
 }
 
-
+#photoBanner
+{
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #888888;
+  height: 350px;
+  .mySlides
+  {
+    height: 250px;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  #rightBtn,#leftBtn
+  {
+    &:hover
+    {
+      cursor: pointer;
+    }
+  }
+}
 .asset
 {
   height:300px;
-  border:#999 2px solid;
+  border-radius: 5px;
+  //border:#999 2px solid;
+  box-shadow: 1px 1px 5px #888888;
   overflow-y: hidden;
   h3
   {

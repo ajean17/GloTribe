@@ -18,8 +18,9 @@
       background-color: grey; }
 
 .avatar #options {
-  text-align: center;
-  float: left; }
+  text-align: left; }
+  .avatar #options button {
+    width: 150px; }
 .avatar #profile_pic_box {
   border: #999 2px solid;
   width: 250px;
@@ -54,9 +55,23 @@
     color: black;
     overflow-x: hidden; }
 
+#photoBanner {
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #888888;
+  height: 350px; }
+  #photoBanner .mySlides {
+    height: 250px;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; }
+  #photoBanner #rightBtn:hover, #photoBanner #leftBtn:hover {
+    cursor: pointer; }
+
 .asset {
   height: 300px;
-  border: #999 2px solid;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #888888;
   overflow-y: hidden; }
   .asset h3 {
     text-align: center; }
@@ -166,11 +181,11 @@ h4 {
     border: #182840 1.5px solid;
     border-radius: 5px;
     box-shadow: 1px 1px 5px #888888;
-    padding: 2px 0px; }
+    padding: 4px 4px; }
     .convoList #talks .talk_pic, .convoContent #talks .talk_pic {
       float: left;
       width: 55px;
-      height: 55px;
+      height: 50px;
       margin-right: 8px;
       border-radius: 5px; }
     .convoList #talks .talkData, .convoContent #talks .talkData {
@@ -240,7 +255,7 @@ h4 {
       outline: none;
       border-radius: 5px; }
 
-h1, h3 {
+h1, h2, h3 {
   text-align: center; }
 
 #criteria {
