@@ -13,30 +13,30 @@
     <div class="form-group">
       <label for="name">User Name:</label>
       <input type="text" class="form-control" id="username" name="name"
-      onblur="checkusername()" onkeyup="restrict('username')" maxlength="16">
+      maxlength="16">
       <span id="unamestatus"></span>
     </div>
 
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" name="email"
-      onfocus="emptyElement('status')" onkeyup="restrict('email')" maxlength="88">
+      onkeyup="restrict('email')" maxlength="88">
     </div>
 
     <div class="form-group">
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" name="password"
-      onfocus="emptyElement('status')" maxlength="100">
+      maxlength="100">
     </div>
 
     <div class="form-group">
       <label for="password_confirmation">Confirm Password:</label>
       <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
-      onfocus="emptyElement('status')" maxlength="100">
+      maxlength="100">
     </div>
 
     <div class="form-group">
-      <button type="submit" id="signupbtn" onclick="signup()" class="btn btn-default">
+      <button type="submit" id="signupbtn" class="btn btn-default">
         Create Account
       </button>
       <span id="status"></span>
@@ -44,7 +44,7 @@
   </form>
   <hr/>
   <div>
-    <a href="#" id= "termsLink" onclick="return false" onmousedown="openTerms()">
+    <a href="#" id= "termsLink" onclick="return false">
       View the Terms Of Use
     </a>
   </div>
