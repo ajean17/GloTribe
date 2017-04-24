@@ -40,6 +40,7 @@ Route::post('/messageSystem','ParseController@conversation')->name('message');
 Route::post('/postSystem','ParseController@post')->name('post');
 Route::post('/reviewSystem','ParseController@review')->name('review');
 Route::post('/eventSystem','ParseController@events')->name('events');
+Route::post('/profileSystem','ParseController@profile')->name('profile');
 Route::get('/passwordSystem','ParseController@password');
 Route::post('/photoSystem/{User}','ParseController@photoHandle');
 

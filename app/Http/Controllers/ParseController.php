@@ -10,7 +10,7 @@ use App\Message;
 use App\Post;
 use App\Patron;
 use App\Review;
-
+use App\Profile;
 use \Storage;
 use Carbon\Carbon;
 
@@ -534,7 +534,63 @@ class ParseController extends Controller
     {
       return view('phpParsers.passwordSystem');
     }
+    public function profile(Request $request)
+    {
+      $slideOne = $request->file('picture1');
+      $slideTwo = $request->file('picture2');
+      $slideThree = $request->file('picture3');
+      $slideFour = $request->file('picture4');
+      $vision = $request['vision'];
+      $profileOwner = $request['profileOwner'];
 
+      $user = User::where('id','=',$profileOwner)->first();
+      $profile = Profile::where('user_id','=',$user->id)->first();
+
+      if($profile == NULL || $profile == "")
+        return back()->withErrors(['message' => 'There seems to be a problem, try again later.']);
+      else
+      {
+        /*if($slideOne != NULL)
+          Profile::where('user_id','=',$profileOwner)->update(array('slideOne' => $slideOne));
+        if($slideTwo != NULL)
+        {
+          Profile::where('user_id','=',$profileOwner)->update(array('slideTwo' => $slideTwo));
+        }
+        if($slideThree != NULL)
+        {
+          Profile::where('user_id','=',$profileOwner)->update(array('slideThree' => $slideThree));
+        }
+        if($slideFour != NULL)
+        {
+          Profile::where('user_id','=',$profileOwner)->update(array('slideFour' => $slideFour));
+        }*/
+        if($vision != NULL)
+          Profile::where('user_id','=',$profileOwner)->update(array('vision' => $vision));
+
+        $userName = $user->name;
+        $allowedFileTypes = config('app.allowedFileTypes');
+        $maxFileSize = config('app.maxFileSize');
+        $rules = [
+          'slideOne' => 'mimes:'.$allowedFileTypes.'|max:'.$maxFileSize,
+          'slideTwo' => 'mimes:'.$allowedFileTypes.'|max:'.$maxFileSize,
+          'slideThree' => 'mimes:'.$allowedFileTypes.'|max:'.$maxFileSize,
+          'slideFour' => 'mimes:'.$allowedFileTypes.'|max:'.$maxFileSize,
+        ];
+        $slides = Array('slideOne' => $slideOne,'slideTwo' =>$slideTwo,'slideThree' => $slideThree,'slideFour' => $slideFour);
+        foreach($slides as $which => $slide)
+        {
+          if($slide != NULL)
+          {
+            Profile::where('user_id','=',$profileOwner)->update(array($which => $slide->getClientOriginalName()));
+            $fileName = $slide->getClientOriginalName();
+            $this->validate($request,$rules);
+            $destinationPath = config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$fileName;
+            $moveResult = Storage::put($destinationPath, file_get_contents($slide->getRealPath()));
+          }
+        }
+      }
+      return redirect()->to('/profile'.'/'.$userName);
+    }
     public function photoHandle(User $User, Request $request)
     {
       //Pull the request object named avatar, and assign its original filename to a variable

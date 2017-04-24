@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Registration | OneTribe
+  Registration | GloTribe
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
     </a>
   </div>
   <div id="terms" style="display:none;">
-      <h3>OneTribe Terms Of Use</h3>
+      <h3>GloTribe Terms Of Use</h3>
       <p>1. Play nice here.</p>
       <p>2. Take a bath before you visit.</p>
       <p>3. Brush your teeth before bed.</p>
@@ -139,7 +139,8 @@
               }
               else if(msg['message'] == "signup_success")
               {
-                $('#signupform').html("OK "+u+", check your email inbox and junk mail box at <u>"+e+"</u> in a moment to complete the sign up process by activating your account. You will not be able to do anything on the site until you successfully activate your account.")
+                //$('#signupform').html("OK "+u+", check your email inbox and junk mail box at <u>"+e+"</u> in a moment to complete the sign up process by activating your account. You will not be able to do anything on the site until you successfully activate your account.")
+                $('#signupform').html("OK "+u+", you are officially part of GloTribe. Proceed to the login to begin.")
                 $('#terms').css('display','none');
                 $('#termsLink').css('display','none');
               }

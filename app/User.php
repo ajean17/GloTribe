@@ -21,7 +21,10 @@ class User extends Authenticatable
     {
       return 'name';
     }
-
+    public function profile()//Pulls the messages sent by a User
+    {
+      return $this->hasOne(Profile::class);
+    }
     public function posts()//Pulls the user's posts
     {
       return $this->hasMany(Post::class);
