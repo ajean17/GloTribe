@@ -571,7 +571,7 @@ class ParseController extends Controller
             $fileName = $slide->getClientOriginalName();
             $this->validate($request,$rules);
             $destinationPath = config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$fileName;
-            //$moveResult = Storage::put($destinationPath, file_get_contents($slide->getRealPath()));
+            Storage::put($destinationPath, file_get_contents($slide->getRealPath()));
           }
         }
       }
@@ -594,13 +594,13 @@ class ParseController extends Controller
       //Grab the destination path variable from the config.app file key
       $destinationPath = config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$fileName;
       //Move the uploaded file from the temporary location to the folder of choice
-      //$moveResult = Storage::put($destinationPath, file_get_contents($file->getRealPath()));
+      Storage::put($destinationPath, file_get_contents($file->getRealPath()));
 
       if($User->avatar != NULL)
       //If the user already has an avatar, delete it and replace with the uploaded file
       {
         //delete current photo in its place
-        //Storage::delete(config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$User->avatar);
+        Storage::delete(config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$User->avatar);
       }
       User::where('name','=',$userName)->update(Array('avatar' => $fileName));
       //Back to the profile page
