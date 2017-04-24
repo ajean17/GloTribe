@@ -60,12 +60,20 @@
     var map;
     var myLatLng;
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-    var address = '15 Holiday Park Drive centereach new york';
+    var Address = '1000 University Center Lane, Lawrenceville, GA 30043';
 
     $(document).ready(function()
     {
       var geocoder = new google.maps.Geocoder();
-      geoLocationInit();//Sets the map according to user's current position
+      //geoLocationInit();//Sets the map according to user's current position
+      getLocale(Address,function(coordinates)//Places a marker based on an address
+      {
+        var latt = coordinates.lat();
+        var longg = coordinates.lng();
+        myLatLng = new google.maps.LatLng(latt,longg);
+        createMap(myLatLng, "GGC");
+      });
+
 
       $('#searchBar').on('keypress', function(e){if(e.keyCode == 13){searchNow();}});
       $('#searchButton').on('click', function(){searchNow();});
@@ -109,7 +117,7 @@
               if(postDate < now)
               {
                 inPast = true;
-                console.log(postTitle+" is in the Past");
+                //console.log(postTitle+" is in the Past");
               }
               if(inPast == false)
               {
@@ -148,6 +156,7 @@
         geocoder.geocode({address:address},function(results,status)
         {
           coordinates = results[0].geometry.location;
+          //console.log(results[0].geometry.location.lat());
           callback(coordinates);
         });
       }
@@ -174,20 +183,20 @@
       {
         alert("Failure playa.");
       }
-      function createMap(myLatlng)
+      function createMap(position, name)
       {
         map = new google.maps.Map(document.getElementById('map'),
         {
-          center: myLatLng,
+          center: position,
           //scrollwheel: false,
           zoom: 8
         });
 
         var marker = new google.maps.Marker({
-          position: myLatLng,
+          position: position,
           map: map,
           //icon: icn,
-          title: "Your position"
+          title: name
         });
       }
       function createMarker(latlng,name)
