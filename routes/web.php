@@ -47,7 +47,7 @@ Route::post('/photoSystem/{User}','ParseController@photoHandle');
 //IMAGE PULLING
 Route::get('images/{filename}', function ($filename)
 {
-    $path = resource_path().'/images'.'/'.$filename;
+    $path = storage_path('app/public').'/images'.'/'.$filename;
 
     if(!File::exists($path)) abort(404);
 
@@ -62,7 +62,7 @@ Route::get('images/{filename}', function ($filename)
 
 Route::get('uploads/user/{user}/{type}/{filename}', function ($user,$type,$filename)
 {
-    $path = resource_path().'/uploads'.'/user'.'/'.$user.'/'.$type.'/'.$filename;
+    $path = storage_path('app/public').'/uploads'.'/user'.'/'.$user.'/'.$type.'/'.$filename;
 
     if(!File::exists($path)) abort(404);
 

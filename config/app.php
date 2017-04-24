@@ -15,7 +15,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'One Tribe',
+    'name' => 'GloTribe',
 
     /*
     |--------------------------------------------------------------------------
