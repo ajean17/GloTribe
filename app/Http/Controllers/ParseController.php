@@ -594,7 +594,7 @@ class ParseController extends Controller
       //Grab the destination path variable from the config.app file key
       $destinationPath = config('app.fileDestinationPath').'/'.$userName.'/images'.'/'.$fileName;
       //Move the uploaded file from the temporary location to the folder of choice
-      Storage::put($destinationPath, file_get_contents($file->getRealPath()));
+      $moveResult = Storage::put($destinationPath, file_get_contents($file->getRealPath()));
 
       if($User->avatar != NULL)
       //If the user already has an avatar, delete it and replace with the uploaded file
@@ -606,5 +606,4 @@ class ParseController extends Controller
       //Back to the profile page
       return redirect()->to('/profile'.'/'.$userName);
     }
-
 }

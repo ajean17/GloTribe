@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),//Originally storage_path(app) but I changed it to resource so it can be in that folder
+            'root' => storage_path('app/public'),
         ],
 
         'public' => [
