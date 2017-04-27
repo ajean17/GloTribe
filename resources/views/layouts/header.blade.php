@@ -8,7 +8,7 @@
       <li><a href="/search">Search</a></li>
       <!--li><a href="/account/{{Auth::user()->name}}">Account</a></li-->
       <li class="right"><a href="/logout">Logout</a></li>
-      <li class="right"><a class="user" href="/notifications/{{Auth::user()->name}}">Notifications</a></li>
+      <li class="right"><a class="user" href="/notifications/{{Auth::user()->name}}">Requests</a></li>
       @else
       <li><a href="/login">Login</a></li>
       <li><a href="/register">Register</a></li>
