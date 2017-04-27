@@ -22,8 +22,8 @@
           Modeling <input type="checkbox" id="modeling" name="modeling"><br/>
           Photography <input type="checkbox" id="photography" name="photography"><br/>
           Illustration <input type="checkbox" id="illustration" name="illustration"><br/>
-          film <input type="checkbox" id="film" name="film"><br/>
-          other <input type="checkbox" id="other" name="other"><br/>
+          Film <input type="checkbox" id="film" name="film"><br/>
+          Other <input type="checkbox" id="other" name="other"><br/>
         </div>
         <hr/>
         <h4>Search By City</h4>
@@ -72,7 +72,7 @@
         var latt = coordinates.lat();
         var longg = coordinates.lng();
         myLatLng = new google.maps.LatLng(latt,longg);
-        createMap(myLatLng, "GGC");
+        createMap(myLatLng, "GGC");un
       });
 
       $('#searchBar').on('keypress', function(e){if(e.keyCode == 13){searchNow();}});
