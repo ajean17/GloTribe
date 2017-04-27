@@ -10,7 +10,7 @@ Route::get('/about', function ()
 });
 Route::get('/freeSmoke', function ()
 {
-    return view('uploadImages');
+    return view('welcome');
 });
 
 //AUTHORIZATION ROUTES

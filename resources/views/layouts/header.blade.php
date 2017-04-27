@@ -10,7 +10,7 @@
       <li class="right"><a href="/logout">Logout</a></li>
       <li class="right"><a class="user" href="/notifications/{{Auth::user()->name}}">Notifications</a></li>
       @else
-      <!--li><a href="/login">Login</a></li-->
+      <li><a href="/login">Login</a></li>
       <li><a href="/register">Register</a></li>
       <li><a href="/about">About GloTribe</a></li>
       @endif
