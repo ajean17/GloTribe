@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Search | OneTribe
+  Search | GloTribe
 @endsection
 
 @section('content')
@@ -29,6 +29,7 @@
         <h4>Search By City</h4>
         <h6 id="cityChoose"></h6>
           <center><select id='cities' name='city'>
+            <option value='dummy' selected disabled>Select a City to View</option>
             <option value='Atlanta'>Altanta</option>
             <option value='Boston'>Boston</option>
             <option value='Los Angeles'>Los Angeles</option>
@@ -74,9 +75,36 @@
         createMap(myLatLng, "GGC");
       });
 
-
       $('#searchBar').on('keypress', function(e){if(e.keyCode == 13){searchNow();}});
       $('#searchButton').on('click', function(){searchNow();});
+      $('#cities').on('click',function()
+      {
+        var city = $('#cities').val();
+        var newAdd;
+        switch (city)
+        {
+          case "Atlanta":
+            newAdd = "Atlanta, GA";
+          break;
+          case "Boston":
+            newAdd = "Boston, MA";
+          break;
+          case "Miami":
+            newAdd = "Miami, FL";
+          break;
+          case "Los Angeles":
+            newAdd = "Los Angeles, CA";
+          break;
+        }
+        //console.log(newAdd);
+        getLocale(newAdd,function(coordinates)
+        {
+          var latt = coordinates.lat();
+          var longg = coordinates.lng();
+          myLatLng = new google.maps.LatLng(latt,longg);
+          createMap(myLatLng, city);
+        });
+      });
 
       function searchNow()
       {
@@ -149,14 +177,12 @@
           }
         });
       }
-
       function getLocale(address, callback)
       {
         var coordinates;
         geocoder.geocode({address:address},function(results,status)
         {
           coordinates = results[0].geometry.location;
-          //console.log(results[0].geometry.location.lat());
           callback(coordinates);
         });
       }

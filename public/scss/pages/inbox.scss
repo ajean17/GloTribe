@@ -1,4 +1,6 @@
-
+$cool: #FFCFFA;
+$myMsgColor: #6CE559;
+$theirMsgColor: #6778FF;
 h4
 {
   text-align: center;
@@ -6,8 +8,8 @@ h4
 .convoList
 {
   box-shadow: 0px 5px 5px #888888;
-  background-color: rgba(0, 200, 200, .2);
-  border:#60A0FF 2.5px solid;
+  background-color: #FFFDEF;
+  border:inset;
   border-radius: 5px;
 
   #startConvo
@@ -22,7 +24,7 @@ h4
   {
     width: 150px;
     height:60px;
-    background-color: white;
+    background-color: #FFF;
     margin-bottom:8px;
     text-align: center;
     border:#182840 1.5px solid;
@@ -82,16 +84,16 @@ h4
       .msg
       {
         margin: 10px 10px;
-        background-color: #f1f0f0;
+        background-color: $theirMsgColor;
         max-width: calc(45% - 20px);
-        color: #000;
+        color: #FFF;
         padding: 10px;
         font-size: 14px;
         border-radius: 5px;
       }
       .msgfrom
       {
-        background-color: #0084ff;
+        background-color: $myMsgColor;
         color: #FFF;
         margin: 10px 10px 10px 55%;
         border-radius: 5px;
@@ -102,13 +104,13 @@ h4
         height: 0;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
-        border-bottom: 8px solid #f1f0f0;
+        border-bottom: 8px solid $theirMsgColor;
         transform: rotate(315deg);
         margin: -12px 0px 0px 45px;
       }
       .msgarrfrom
       {
-        border-bottom: 8px solid #0084ff;
+        border-bottom: 8px solid $myMsgColor;
         float: right;
         margin-right: 45px;
       }

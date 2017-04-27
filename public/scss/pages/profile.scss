@@ -1,3 +1,4 @@
+$contentColor: #FFFDEF;
 .avatar
 {
   //border-radius: 5px;
@@ -58,6 +59,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 5px #888888;
   height: 350px;
+  background-color: $contentColor;
   .mySlides
   {
     height: 250px;
@@ -79,12 +81,9 @@
   height:300px;
   border-radius: 5px;
   //border:#999 2px solid;
+  background-color: $contentColor;
   box-shadow: 1px 1px 5px #888888;
   overflow-y: hidden;
-  h3
-  {
-    text-align: center;
-  }
 }
 #posts
 {

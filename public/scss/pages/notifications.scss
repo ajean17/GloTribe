@@ -1,11 +1,9 @@
 #notesBox
 {
-  float:left;
-  width:430px;
-  border:#60A0FF 2.5px solid;
+  background-color: #FFFDEF;
+  border:#6F7E7F 2.5px solid;
   box-shadow: 5px 5px 5px #888888;
   border-radius: 5px;
-  margin-right:60px;
   padding:10px;
   height: 800px;
   overflow-y: auto;
@@ -17,7 +15,6 @@
 div.friendrequests
 {
   height:74px;
-  //border-bottom:#CCC 1px solid;
   margin-bottom:8px;
 }
 img.user_pic

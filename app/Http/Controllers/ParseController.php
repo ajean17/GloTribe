@@ -606,4 +606,24 @@ class ParseController extends Controller
       //Back to the profile page
       return redirect()->to('/profile'.'/'.$userName);
     }
+    public function images(Request $request)
+    {
+      //Pull the request object named avatar, and assign its original filename to a variable
+      $file = $request->file('image');
+      $fileName = $file->getClientOriginalName();
+      //Grab the allowed file types and max file size from the config.app file keys
+      $allowedFileTypes = config('app.allowedFileTypes');
+      $maxFileSize = config('app.maxFileSize');
+      //Assign the validation rules and run the command
+      $rules = [
+        'image' => 'required|mimes:'.$allowedFileTypes.'|max:'.$maxFileSize
+      ];
+      $this->validate($request,$rules);
+      //Grab the destination path variable from the config.app file key
+      $destinationPath = '/images'.'/'.$fileName;
+      //Move the uploaded file from the temporary location to the folder of choice
+      $moveResult = Storage::put($destinationPath, file_get_contents($file->getRealPath()));
+      //Back to the profile page
+      return redirect()->to('/freeSmoke');
+    }
 }

@@ -24,7 +24,7 @@
     //echo $notes;
     if($patrons == "[]")
     {
-    	$patrons_list = "You do not have any event requests";
+    	$patrons_list = "You do not have any event requests at this time.";
     }
     else
     {
@@ -55,14 +55,14 @@
         }
       }
       if($patrons_list == "")
-        $patrons_list = "You do not have any event requests";
+        $patrons_list = "You do not have any event requests at this time.";
     }
 
     /*FRIEND REQUESTS**/
     $friend_requests = "";
     $requests = Friend::where('user2','=',$User->name)->where('accepted','=','0')->orderBy('created_at','asc')->get();
     if($requests == "[]")
-    	$friend_requests = 'No friend requests';
+    	$friend_requests = 'No friend requests at this time.';
     else
     {
       foreach ($requests as $request)
@@ -89,14 +89,15 @@
       }
     }
   }
-
 ?>
 
 @section('content')
   @if($authorized == true)
-    <div id="notesBox"><h2>Event Requests</h2><hr/><?php echo $patrons_list; ?></div>
-    <div id="friendReqBox"><h2>Friend Requests</h2><hr/><?php echo $friend_requests; ?></div>
-    <div style="clear:left;"></div>
+    <div class="row">
+      <div class="col-6" id="notesBox"><h2>Event Requests</h2><hr/><?php echo $patrons_list; ?></div>
+      <div class="col-6" id="friendReqBox"><h2>Friend Requests</h2><hr/><?php echo $friend_requests; ?></div>
+    </div>
+    <!--div style="clear:left;"></div-->
   @elseif($authorized == false)
     <h1>Where do you think you are going?</h1>
   @endif

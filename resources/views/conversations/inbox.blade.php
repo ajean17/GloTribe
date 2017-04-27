@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Inbox | OneTribe
+  Inbox | GloTribe
 @endsection
 
 <?php

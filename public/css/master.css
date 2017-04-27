@@ -11,7 +11,7 @@
   .navigation li a {
     display: block;
     padding: 14px 16px;
-    color: pink;
+    color: #FFFDEF;
     text-decoration: none; }
     .navigation li a:hover:not(.user) {
       color: pink;
@@ -58,7 +58,8 @@
 #photoBanner {
   border-radius: 5px;
   box-shadow: 1px 1px 5px #888888;
-  height: 350px; }
+  height: 350px;
+  background-color: #FFFDEF; }
   #photoBanner .mySlides {
     height: 250px;
     width: 60%;
@@ -71,10 +72,9 @@
 .asset {
   height: 300px;
   border-radius: 5px;
+  background-color: #FFFDEF;
   box-shadow: 1px 1px 5px #888888;
   overflow-y: hidden; }
-  .asset h3 {
-    text-align: center; }
 
 #posts, #reviews {
   overflow-y: auto; }
@@ -97,22 +97,40 @@
   float: right;
   background-color: rgba(155, 155, 255, 0.5);
   right: 0;
-  border: 2px solid white;
+  border: #999 2px solid;
   text-align: right; }
   .loginBox h5 {
     text-align: center; }
 
 .aboutRight {
-  border: 2px solid white; }
+  border: #999 2px solid;
+  box-shadow: 2px 2px 5px #888888;
+  border-radius: 5px;
+  height: 360px;
+  padding: 8px; }
   .aboutRight p {
-    text-align: center; }
+    text-align: center;
+    padding: 5px; }
+  .aboutRight img {
+    height: 340px;
+    width: 400px;
+    border-radius: 5px; }
   .aboutRight img {
     float: Right; }
 
 .aboutLeft {
-  border: 2px solid white; }
+  border: #999 2px solid;
+  box-shadow: 2px 2px 5px #888888;
+  border-radius: 5px;
+  height: 360px;
+  padding: 8px; }
   .aboutLeft p {
-    text-align: center; }
+    text-align: center;
+    padding: 5px; }
+  .aboutLeft img {
+    height: 340px;
+    width: 400px;
+    border-radius: 5px; }
   .aboutLeft img {
     float: Left; }
 
@@ -135,12 +153,10 @@
   padding: 12px; }
 
 #notesBox, #friendReqBox {
-  float: left;
-  width: 430px;
-  border: #60A0FF 2.5px solid;
+  background-color: #FFFDEF;
+  border: #6F7E7F 2.5px solid;
   box-shadow: 5px 5px 5px #888888;
   border-radius: 5px;
-  margin-right: 60px;
   padding: 10px;
   height: 800px;
   overflow-y: auto; }
@@ -164,8 +180,8 @@ h4 {
 
 .convoList, .convoContent {
   box-shadow: 0px 5px 5px #888888;
-  background-color: rgba(0, 200, 200, 0.2);
-  border: #60A0FF 2.5px solid;
+  background-color: #FFFDEF;
+  border: inset;
   border-radius: 5px; }
   .convoList #startConvo, .convoContent #startConvo {
     margin: auto;
@@ -175,7 +191,7 @@ h4 {
   .convoList #talks, .convoContent #talks {
     width: 150px;
     height: 60px;
-    background-color: white;
+    background-color: #FFF;
     margin-bottom: 8px;
     text-align: center;
     border: #182840 1.5px solid;
@@ -212,14 +228,14 @@ h4 {
       border-radius: 5px; }
       .convoContent #messageBox #appearMessage .msg {
         margin: 10px 10px;
-        background-color: #f1f0f0;
+        background-color: #6778FF;
         max-width: calc(45% - 20px);
-        color: #000;
+        color: #FFF;
         padding: 10px;
         font-size: 14px;
         border-radius: 5px; }
       .convoContent #messageBox #appearMessage .msgfrom {
-        background-color: #0084ff;
+        background-color: #6CE559;
         color: #FFF;
         margin: 10px 10px 10px 55%;
         border-radius: 5px; }
@@ -228,11 +244,11 @@ h4 {
         height: 0;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
-        border-bottom: 8px solid #f1f0f0;
+        border-bottom: 8px solid #6778FF;
         transform: rotate(315deg);
         margin: -12px 0px 0px 45px; }
       .convoContent #messageBox #appearMessage .msgarrfrom {
-        border-bottom: 8px solid #0084ff;
+        border-bottom: 8px solid #6CE559;
         float: right;
         margin-right: 45px; }
       .convoContent #messageBox #appearMessage .msgsentby {
@@ -254,9 +270,6 @@ h4 {
       margin: auto;
       outline: none;
       border-radius: 5px; }
-
-h1, h2, h3 {
-  text-align: center; }
 
 #criteria {
   box-shadow: 5px 5px 5px #888888;
@@ -296,7 +309,7 @@ h1, h2, h3 {
 
 body {
   margin: 0; }
-  body h1 {
+  body h1, body h2, body h3 {
     text-align: center; }
 
 /*# sourceMappingURL=master.css.map */

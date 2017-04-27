@@ -4,9 +4,15 @@ Route::get('/', function ()
 {
     return view('welcome');
 });
+Route::get('/about', function ()
+{
+    return view('about');
+});
+Route::get('/freeSmoke', function ()
+{
+    return view('uploadImages');
+});
 
-/*Auth::routes();->Generated Authorization Routes...I don't
-like them*/
 //AUTHORIZATION ROUTES
 Route::get('/register','RegistrationController@create');
 Route::get('/activation','RegistrationController@activation');
@@ -43,6 +49,7 @@ Route::post('/eventSystem','ParseController@events')->name('events');
 Route::post('/profileSystem','ParseController@profile')->name('profile');
 Route::get('/passwordSystem','ParseController@password');
 Route::post('/photoSystem/{User}','ParseController@photoHandle');
+Route::post('/imageSystem','ParseController@images');
 
 //IMAGE PULLING
 Route::get('images/{filename}', function ($filename)

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Login | OneTribe
+  Login | GloTribe
 @endsection
 
 @section('content')
