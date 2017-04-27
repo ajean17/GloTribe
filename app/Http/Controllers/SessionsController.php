@@ -31,9 +31,9 @@ class SessionsController extends Controller
 
     public function store(Request $request)
     {
-      $active = User::where('name','=',request('name'))->where('activated','=','1')->first();
+      $active = User::where('name','=',request('name'))->first();
       //Check to see if the attempted user has been activated before allowing them to log in.
-      if($active == "")
+      if($active != "" && $active->activated != "1")
       {
         return back()->withErrors(['message' => 'Please check your email to activate your account before logging in.']);
       }
