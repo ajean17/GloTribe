@@ -45,11 +45,11 @@
             $picURL = "/images/Default.jpg";
       			$user1pic = '<img src="'.$picURL.'" alt="'.$user1.'" class="user_pic">';
       		}
-      		$patrons_list .= '<div id="friendreq_'.$patronID.'" class="friendrequests">';
+      		$patrons_list .= '<div id="eventreq_'.$patronID.'" class="friendrequests">';
       		$patrons_list .= '<a href="/profile/'.$user1.'">'.$user1pic.'</a>';
-      		$patrons_list .= '<div class="user_info" id="user_info_'.$patronID.'">'.$datemade.' | <a href="/profile/'.$user1.'">'.$user1.'</a> wishes to be part of <b>'.$patron->post->title.'</b><br /><br />';
-      		$patrons_list .= '<button onclick="eventReqHandler(\'accept\',\''.$patronID.'\',\''.$user1.'\',\'user_info_'.$patronID.'\')">Accept</button> or ';
-      		$patrons_list .= '<button onclick="eventReqHandler(\'reject\',\''.$patronID.'\',\''.$user1.'\',\'user_info_'.$patronID.'\')">Reject</button>';
+      		$patrons_list .= '<div class="user_info" id="patron_info_'.$patronID.'">'.$datemade.' | <a href="/profile/'.$user1.'">'.$user1.'</a> wishes to be part of <b>'.$patron->post->title.'</b><br /><br />';
+      		$patrons_list .= '<button onclick="eventReqHandler(\'accept\',\''.$patronID.'\',\''.$user1.'\',\'patron_info_'.$patronID.'\')">Accept</button> or ';
+      		$patrons_list .= '<button onclick="eventReqHandler(\'reject\',\''.$patronID.'\',\''.$user1.'\',\'patron_info_'.$patronID.'\')">Reject</button>';
       		$patrons_list .= '</div>';
       		$patrons_list .= '</div><hr/>';
         }
@@ -81,9 +81,9 @@
     		}
     		$friend_requests .= '<div id="friendreq_'.$reqID.'" class="friendrequests">';
     		$friend_requests .= '<a href="/profile/'.$user1.'">'.$user1pic.'</a>';
-    		$friend_requests .= '<div class="user_info" id="user_info_'.$reqID.'">'.$datemade.' <a href="/profile/'.$user1.'">'.$user1.'</a> requests friendship<br /><br />';
-    		$friend_requests .= '<button onclick="friendReqHandler(\'accept\',\''.$reqID.'\',\''.$user1.'\',\'user_info_'.$reqID.'\')">Accept</button> or ';
-    		$friend_requests .= '<button onclick="friendReqHandler(\'reject\',\''.$reqID.'\',\''.$user1.'\',\'user_info_'.$reqID.'\')">Reject</button>';
+    		$friend_requests .= '<div class="user_info" id="friend_info_'.$reqID.'">'.$datemade.' <a href="/profile/'.$user1.'">'.$user1.'</a> requests friendship<br /><br />';
+    		$friend_requests .= '<button onclick="friendReqHandler(\'accept\',\''.$reqID.'\',\''.$user1.'\',\'friend_info_'.$reqID.'\')">Accept</button> or ';
+    		$friend_requests .= '<button onclick="friendReqHandler(\'reject\',\''.$reqID.'\',\''.$user1.'\',\'friend_info_'.$reqID.'\')">Reject</button>';
     		$friend_requests .= '</div>';
     		$friend_requests .= '</div><hr/>';
       }
